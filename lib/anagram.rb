@@ -7,13 +7,13 @@ class String
     word2_lower = word2.downcase
     result = "'" + word1.capitalize() + "' and '" + word2 + "' are"
     if word1_lower.anagram?(word2_lower)
-      result = result + " anagrams and"
+      result = result + " anagrams and "
       if word1_lower.palindrome?
-        result.concat(word1 + "is a palindrome")
+        result.concat("'" + word1 + "' is a palindrome")
       elsif word2_lower.palindrome?
-        result.concat(word2 + "is a palindrome")
+        result.concat("'" + word2 + "' is a palindrome")
       else
-        result = result.chomp(" and")
+        result = result.chomp(" and ")
       end
     end
     result

@@ -3,7 +3,7 @@ require('./lib/anagram')
 
 describe('String.anagram') do
   it("tests if a word is an anagram") do
-    expect("star".anagram_handler("rats")).to(eq("'Star' and 'rats' are anagrams"))
+    expect("hustling".anagram_handler("sunlight")).to(eq("'Hustling' and 'sunlight' are anagrams"))
   end
   it("is case insensitive") do
     expect("Aide".anagram_handler("Idea")).to(eq("'Aide' and 'Idea' are anagrams"))
@@ -15,10 +15,10 @@ describe('String.anagram') do
     expect("otto".anagram_handler("toot")).to(eq("'Otto' and 'toot' are anagrams and both are palindromes"))
   end
   it("tests if words are palindromes of each other") do
-    expect("Meg".anagram_handler("gem")).to(eq("'Meg' and 'gem' are anagrams and are palindromes of each other"))
+    expect("Star".anagram_handler("rats")).to(eq("'Star' and 'rats' are anagrams and are palindromes of each other"))
   end
   it("tests if words are antigrams") do
-    expect("art".anagram_handler("mall")).to(eq("'Art' and 'mall' are antigrams"))
+    expect("art".anagram_handler("spool")).to(eq("'Art' and 'spool' are antigrams"))
   end
   it("tests if words are not anagrams or antigrams") do
     expect("mom".anagram_handler("word")).to(eq("'Eve' and 'ewe' aren't anagrams or antigrams but both are palindromes"))

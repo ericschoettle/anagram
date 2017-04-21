@@ -9,17 +9,11 @@ class String
     if word1_lower.anagram?(word2_lower)
       result = result + " anagrams and "
       result = self.palindrome_handler(word2, result)
-    # elsif
-    #
+    elsif word1_lower.antigram?(word2_lower)
+      result = result + " antigrams and "
+      result = self.palindrome_handler(word2, result)
     end
     result
-  end
-end
-
-class String
-  define_method(:anagram?) do |word2|
-    word1 = self
-    word1.chars.sort == word2.chars.sort
   end
 end
 
@@ -40,6 +34,20 @@ class String
       result = result [0...-5]
     end
     result
+  end
+end
+
+class String
+  define_method(:antigram?) do |word2|
+    word1 = self
+    /[word1]/.match(word2)
+  end
+end
+
+class String
+  define_method(:anagram?) do |word2|
+    word1 = self
+    word1.chars.sort == word2.chars.sort
   end
 end
 

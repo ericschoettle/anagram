@@ -1,12 +1,12 @@
-# _{Anagram?}_
+# _Anagram?_
 
-#### _{Application tests for anagrams, palindromes, and antigrams}, {04/21/2017}_
+#### _Application tests for anagrams, palindromes, and antigrams, 04/21/2017_
 
-#### By _**{Eric Schoettle}**_
+#### By _**Eric Schoettle**_
 
 ## Description
 
-_{This application tests if two words are anagrams of each other - that is, if they share the same letters. It also tests if they are antigrams - that is, if they share no letters. Then comes the fun part - are any of them palindromes? Are they a palindrome together (that is, each others' mirror images)? Lastly, it checks if they are in fact words.}_
+_This application tests if two words are anagrams of each other - that is, if they share the same letters. It also tests if they are antigrams - that is, if they share no letters. Then comes the fun part - are any of them palindromes? Are they a palindrome together (that is, each others' mirror images)? Lastly, it checks if they are in fact words._
 
 ## Setup instructions
 
@@ -20,18 +20,18 @@ _{This application tests if two words are anagrams of each other - that is, if t
 
 ## Known Bugs
 
-_{The bootstrap link doesn't work and styling is, shall we say... lacking}_
+_The bootstrap link doesn't work and styling is, shall we say... lacking_
 
 ## Support and contact details
 
-_{I'd be glad to offer support if you find yourself using this app, but much less glad to share my email address. Sorry, the latter wins}_
+_I'd be glad to offer support if you find yourself using this app, but much less glad to share my email address. Sorry, the latter wins_
 
 ## Technologies Used
 
-_{Ruby, Sinatra, and the Mirriam Webster dictionary API}_
+_Ruby, Sinatra, and the Mirriam Webster dictionary API_
 
 ### License
 
-*{This software is licensed under the MIT license. Feel free to use it as you wish, just don't be an ass, please}*
+*This software is licensed under the MIT license. Feel free to use it as you wish, just don't be an ass, please*
 
-Copyright (c) 2017 **_{Eric Schoettle}_**
+Copyright (c) 2017 **_Eric Schoettle_**

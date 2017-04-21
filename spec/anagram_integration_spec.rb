@@ -1,13 +1,14 @@
-# require('capybara/rspec')
-# require('./app')
-# Capybara.app = Sinatra::Application
-# set(:show_exception, false)
-#
-# describe('coin path', :type => :feature) do
-#   it "gives a number of cents and returns change" do
-#     visit('/')
-#     fill_in('change', :with => '92')
-#     click_button('Count')
-#     expect(page).to have_content('3 quarters, 1 dime, 1 nickel, 2 pennies')
-#   end
-# end
+require('capybara/rspec')
+require('./app')
+Capybara.app = Sinatra::Application
+set(:show_exception, false)
+
+describe('anagram path', :type => :feature) do
+  it "tests if two words are anagrams, antigrams, and/or palindromes" do
+    visit('/')
+    fill_in('word1', :with => 'otto')
+    fill_in('word2', :with => 'toot')
+    click_button('Anagram?')
+    expect(page).to have_content("Otto' and 'toot' are anagrams and both are palindromes")
+  end
+end

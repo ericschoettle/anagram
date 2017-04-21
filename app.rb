@@ -9,6 +9,6 @@ get('/') do
 end
 
 get('/result') do
-  @result = params.fetch('word1').primes(params.fetch('word2'))
+  @result = params.fetch('word1').anagram_handler(params.fetch('word2'))
   erb(:result)
 end

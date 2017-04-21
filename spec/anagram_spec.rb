@@ -27,6 +27,6 @@ describe('String.anagram') do
     expect("dormitory".anagram_handler("dirty room")).to(eq("'Dormitory' and 'dirty room' are anagrams"))
   end
   it("tests if words are indeed words") do
-    expect("ggmbph".anagram_handler("mbpghg")).to(eq("enter words, you fool"))
+    expect("ggmbph".anagram_handler("word")).to(eq("Ggmbph isn't a word!"))
   end
 end

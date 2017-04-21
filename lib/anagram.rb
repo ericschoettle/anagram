@@ -1,21 +1,41 @@
 require "pry"
+require "rest-client"
 
 class String
   define_method(:anagram_handler) do |word2|
     word1 = self
     word1_prep, word2_prep = word1.prep(word2)
     result = "'" + word1.capitalize() + "' and '" + word2 + "' are"
-    if word1_prep.anagram?(word2_prep)
-      result = result + " anagrams and "
-      result = self.palindrome_handler(word2, result)
-    elsif word1_prep.antigram?(word2_prep)
-      result = result + " antigrams and "
-      result = self.palindrome_handler(word2, result)
+    if word1.test_word(word2) == true
+      if word1_prep.anagram?(word2_prep)
+        result = result + " anagrams and "
+        result = self.palindrome_handler(word2, result)
+      elsif word1_prep.antigram?(word2_prep)
+        result = result + " antigrams and "
+        result = self.palindrome_handler(word2, result)
+      else
+        result = result + " neither anagrams nor antigrams but "
+        result = self.palindrome_handler(word2, result)
+      end
     else
-      result = result + " neither anagrams nor antigrams but "
-      result = self.palindrome_handler(word2, result)
+      result = word1.test_word(word2).capitalize + " isn't a word!"
     end
     result
+  end
+end
+
+class String
+  define_method(:test_word) do |word2|
+    test_result = true
+    wordsArray = self.split(" ") + word2.split(" ")
+    wordsArray.each() do |word|
+      word = word.prep("").join("")
+      url = "http://www.dictionaryapi.com/api/v1/references/collegiate/xml/" + word + "?key=dc368593-f759-4a0f-b8da-2e87f78e0fed"
+      if not RestClient.get(url).include?("entry id")
+        test_result = word
+      end
+    end
+    test_result
   end
 end
 

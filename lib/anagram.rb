@@ -6,20 +6,25 @@ class String
     word1 = self
     word1_prep, word2_prep = word1.prep(word2)
     result = "'" + word1.capitalize() + "' and '" + word2 + "' are"
-    if word1.test_word(word2) == true
-      if word1_prep.anagram?(word2_prep)
-        result = result + " anagrams and "
-        result = self.palindrome_handler(word2, result)
-      elsif word1_prep.antigram?(word2_prep)
-        result = result + " antigrams and "
-        result = self.palindrome_handler(word2, result)
+    if word1 != word2
+      if word1.test_word(word2) == true
+        if word1_prep.anagram?(word2_prep)
+          result = result + " anagrams and "
+          result = self.palindrome_handler(word2, result)
+        elsif word1_prep.antigram?(word2_prep)
+          result = result + " antigrams and "
+          result = self.palindrome_handler(word2, result)
+        else
+          result = result + " neither anagrams nor antigrams but "
+          result = self.palindrome_handler(word2, result)
+        end
       else
-        result = result + " neither anagrams nor antigrams but "
-        result = self.palindrome_handler(word2, result)
+        result = word1.test_word(word2).capitalize + " isn't a word!"
       end
     else
-      result = word1.test_word(word2).capitalize + " isn't a word!"
+      result = "Trying to be clever, putting in the same word twice..."
     end
+
     result
   end
 end

@@ -29,4 +29,7 @@ describe('String.anagram') do
   it("tests if words are indeed words") do
     expect("ggmbph".anagram_handler("word")).to(eq("Ggmbph isn't a word!"))
   end
+  it("tests if two words are teh same") do
+    expect("word".anagram_handler("word")).to(eq("Trying to be clever, putting in the same word twice..."))
+  end
 end

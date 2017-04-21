@@ -8,7 +8,9 @@ class String
     result = "'" + word1.capitalize() + "' and '" + word2 + "' are"
     if word1_lower.anagram?(word2_lower)
       result = result + " anagrams and "
-      if word1_lower.palindrome?
+      if word1_lower.palindrome? && word2_lower.palindrome?
+        result.concat("both are palindromes")
+      elsif word1_lower.palindrome?
         result.concat("'" + word1 + "' is a palindrome")
       elsif word2_lower.palindrome?
         result.concat("'" + word2 + "' is a palindrome")

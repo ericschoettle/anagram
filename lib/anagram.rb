@@ -13,7 +13,8 @@ class String
       result = result + " antigrams and "
       result = self.palindrome_handler(word2, result)
     else
-      result = result + "neither anagrams nor antigrams but "
+      result = result + " neither anagrams nor antigrams but "
+      result = self.palindrome_handler(word2, result)
     end
     result
   end

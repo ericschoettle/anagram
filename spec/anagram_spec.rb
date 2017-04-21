@@ -21,7 +21,7 @@ describe('String.anagram') do
     expect("art".anagram_handler("spool")).to(eq("'Art' and 'spool' are antigrams"))
   end
   it("tests if words are not anagrams or antigrams") do
-    expect("Eve".anagram_handler("ewe")).to(eq("'Eve' and 'ewe' aren't anagrams or antigrams but both are palindromes"))
+    expect("Eve".anagram_handler("ewe")).to(eq("'Eve' and 'ewe' are neither anagrams nor antigrams but both are palindromes"))
   end
   it("can handle multi-word input") do
     expect("dormitory".anagram_handler("dirty room")).to(eq("'Dormitory' and 'dirty room' are anagrams"))

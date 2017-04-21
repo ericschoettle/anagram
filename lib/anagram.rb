@@ -12,6 +12,8 @@ class String
     elsif word1_lower.antigram?(word2_lower)
       result = result + " antigrams and "
       result = self.palindrome_handler(word2, result)
+    else
+      result = result + "neither anagrams nor antigrams but "
     end
     result
   end
@@ -40,7 +42,7 @@ end
 class String
   define_method(:antigram?) do |word2|
     word1 = self
-    /[word1]/.match(word2)
+    /[#{Regexp.quote(word1)}]/ !~ word2
   end
 end
 

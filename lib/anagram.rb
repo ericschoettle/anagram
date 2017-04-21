@@ -9,6 +9,8 @@ class String
     if word1_lower.anagram?(word2_lower)
       result = result + " anagrams and "
       result = self.palindrome_handler(word2, result)
+    # elsif
+    #
     end
     result
   end
@@ -28,6 +30,8 @@ class String
     word2_lower = word2.downcase
     if word1_lower.palindrome? && word2_lower.palindrome?
       result.concat("both are palindromes")
+    elsif (word1_lower + word2_lower).palindrome?
+      result.concat("are palindromes of each other")
     elsif word1_lower.palindrome?
       result.concat("'" + word1 + "' is a palindrome")
     elsif word2_lower.palindrome?

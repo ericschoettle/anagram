@@ -15,7 +15,7 @@ describe('String.anagram') do
     expect("otto".anagram_handler("toot")).to(eq("'Otto' and 'toot' are anagrams and both are palindromes"))
   end
   it("tests if words are palindromes of each other") do
-    expect("Meg".anagram_handler("gem")).to(eq("'Meg' and 'gem' are anagrams and palindromes of each other"))
+    expect("Meg".anagram_handler("gem")).to(eq("'Meg' and 'gem' are anagrams and are palindromes of each other"))
   end
   it("tests if words are antigrams") do
     expect("art".anagram_handler("mall")).to(eq("'Art' and 'mall' are antigrams"))
